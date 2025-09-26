@@ -39,7 +39,6 @@ public class Injector {
         Object clazzImplementationInstance = createNewInstance(clazz);
         instances.put(clazz, clazzImplementationInstance);
 
-        // 2. Тепер інжектимо залежності
         Field[] declaredFields = clazz.getDeclaredFields();
         for (Field field : declaredFields) {
             if (field.isAnnotationPresent(Inject.class)) {
